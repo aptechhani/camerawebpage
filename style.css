@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+#main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(165, 135, 135);
+}
+#home {
+    width: 100%;
+    min-height: 90vh;
+    background-color: rgb(143, 165, 135);
+    align-items: flex-end;
+    display: flex;
+}
+#nav {
+    height: 10vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.884);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+}
+#nav #links {
+    display: flex;
+    gap: 35px;
+    letter-spacing: 2px;
+}
+#links a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+button {
+    padding: 0.7vw;
+    background: black;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+#left {
+    width: 35%;
+    min-height: inherit;
+    background-color: #dadada;
+    position: relative;
+    padding: 4.5vw;
+}
+#text {
+    width: 80%;
+    right: -10%;
+    position: absolute;
+}
+#text h1 {
+    font-size: 3.7vw;
+    line-height: 1;
+}
+#text p {
+    margin: 2vw 0;
+    width: 80%;
+    line-height: 20px;
+    font-size: 13px;
+}
+#center {
+    width: 45%;
+    min-height: inherit;
+    background-color: black;
+    background-image: url(https://images.unsplash.com/photo-1516035069371-29a1b244cc32?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FtZXJhJTIwc29ueXxlbnwwfHwwfHx8MA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#right {
+    width: 25%;
+    min-height: inherit;
+    background-color: black;
+    background-image: url(https://i.pinimg.com/736x/94/6f/d2/946fd20c35c6a575fdbc8a836627abd9.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+    #home {
+      flex-direction: column;
+    }
+  
+    /* Text پورے width پر */
+    #left {
+      width: 100%;    
+      min-height: fit-content;        /* پوری چوڑائی لے */
+    }
+  
+    /* دونوں امیجز کو ایک ہی row میں لانا */
+    #center,
+    #right {
+      width: 50%;             /* دونوں کی چوڑائی 50-50 فیصد */
+      min-height: 30vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+    
+    /* Flexbox استعمال کر کے ایک row میں لانا */
+    #home {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    /* امیجز کو ساتھ ساتھ رکھنے کے لیے ایک wrapper */
+   
+    #center,
+    #right {
+      width: 50%;               /* دونوں کی چوڑائی 50-50 فیصد */
+      min-height: 30vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+    
+    /* Flexbox استعمال کر کے ایک row میں لانا */
+  
+  
+    /* Text کو adjust کرنا */
+    #text {
+      position: static;
+      width: 100%;
+    }
+    #text h1 {
+      font-size: 5vw;
+    }
+    #text p {
+      font-size: 14px;
+    }
+  } @media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+    }
+
+    /* Text پوری چوڑائی لے */
+    #left {
+        width: 100%;    
+        min-height: fit-content;
+    }
+
+    /* دونوں امیجز کو ایک row میں لانا */
+    #center,
+    #right {
+        width: 50%;                  /* دونوں کی چوڑائی 50-50 فیصد */
+        min-height: 30vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Flexbox استعمال کر کے ایک row میں لانا */
+    #home {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>/* Base Styles */
+      #nav {
+        height: 10vh;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.884);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4vw;
+        position: relative;
+      }
+      
+      #nav #links {
+        display: flex;
+        gap: 35px;
+        letter-spacing: 2px;
+      }
+      
+      #links a {
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+        font-weight: 600;
+      }
+      
+      #nav button {
+        padding: 0.7vw;
+        background: black;
+        border: none;
+        font-size: 15px;
+        border-radius: 5px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+      
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: black;
+        transition: 0.3s;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        #links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 10vh;
+          right: 0;
+          background: rgba(255, 255, 255, 0.95);
+          width: 50%;
+          padding: 10px;
+          box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 0 0 0 10px;
+        }
+        #nav button
+        {
+          display: none;
+        }
+        #links a {
+          padding: 10px 0;
+          border-bottom: 1px solid #ccc;
+        }
+      
+        .hamburger {
+          display: flex;
+        }
+      
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+      
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+      
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+      
+        #links.active {
+          display: flex;
+        }
+      
+      }
+      </style>
+</head>
+<body>
+    <div id="main">
+      <div id="nav">
+        <h3>📸Vision Capture</h3>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="links">
+          <a href="#">Home</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+        </div>
+        <button>Login</button>
+      </div>
+        <div id="home">
+        <div id="left">
+            <div id="text">
+                <h1>Capture Moments, <br>
+                    Craft  Memorie<SPAn style="color:white;">s</SPAn>—Every  <br>Click Tells a Story.</h1>
+                  <p>Discover the art of photography; capture beauty, create memories, and see differently.</p>
+                  <button>Read More</button>
+                </div>
+        </div>
+        <div id="center"></div>
+        <div id="right"></div>
+    </div>
+    </div>
+
+    <script>function toggleMenu() {
+      const links = document.getElementById('links');
+      const hamburger = document.querySelector('.hamburger');
+      links.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+    </script>
+</body>
+</html>
